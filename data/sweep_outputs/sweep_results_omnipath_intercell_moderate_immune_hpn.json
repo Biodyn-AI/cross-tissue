@@ -1,0 +1,114 @@
+{
+  "candidate_config": {
+    "use_sources_dorothea": false,
+    "use_targets_dorothea": false,
+    "use_sources_omnipath": true,
+    "use_targets_omnipath": true,
+    "use_sources_intercell": true,
+    "use_targets_intercell": true,
+    "candidate_mask_mode": "intersection",
+    "omnipath_directed_only": true
+  },
+  "candidate_edges": 64942,
+  "aupr": 4.156432228319076e-05,
+  "percentile_sweep": [
+    {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "predicted_edges": 12989,
+      "true_edges": 3,
+      "percentile": 80.0,
+      "threshold": 0.002573181167244912
+    },
+    {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "predicted_edges": 9742,
+      "true_edges": 3,
+      "percentile": 85.0,
+      "threshold": 0.0029159432181834494
+    },
+    {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "predicted_edges": 6495,
+      "true_edges": 3,
+      "percentile": 90.0,
+      "threshold": 0.003391834418289364
+    },
+    {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "predicted_edges": 5196,
+      "true_edges": 3,
+      "percentile": 92.0,
+      "threshold": 0.003676774471998215
+    },
+    {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "predicted_edges": 3897,
+      "true_edges": 3,
+      "percentile": 94.0,
+      "threshold": 0.004030330532083379
+    },
+    {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "predicted_edges": 3248,
+      "true_edges": 3,
+      "percentile": 95.0,
+      "threshold": 0.004225694541154162
+    }
+  ],
+  "top_k_sweep": [
+    {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "predicted_edges": 6800,
+      "true_edges": 3,
+      "top_k": 25
+    },
+    {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "predicted_edges": 13600,
+      "true_edges": 3,
+      "top_k": 50
+    },
+    {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "tp": 0,
+      "predicted_edges": 27200,
+      "true_edges": 3,
+      "top_k": 100
+    },
+    {
+      "precision": 4.901960784313725e-05,
+      "recall": 0.6666666666666666,
+      "f1": 9.803200745043256e-05,
+      "tp": 2,
+      "predicted_edges": 40800,
+      "true_edges": 3,
+      "top_k": 150
+    }
+  ]
+}

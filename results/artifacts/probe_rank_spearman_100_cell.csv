@@ -1,0 +1,4 @@
+cell_budget,tissue_a,tissue_b,spearman_rank_corr
+100,immune,kidney,0.7142857142857144
+100,immune,lung,0.25
+100,kidney,lung,0.642857142857143

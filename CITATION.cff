@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software or the accompanying data, please cite it as below."
+title: "Cross-Tissue Probe Threshold Transfer for Mechanistic Gene Regulatory Network Evaluation in Single-Cell Foundation Models"
+authors:
+  - family-names: Kendiukhov
+    given-names: Ihor
+    affiliation: "University of Tübingen"
+    email: kenduhov.ig@gmail.com
+year: 2026
+license: MIT
+repository-code: "https://github.com/Biodyn-AI/cross-tissue"
+abstract: >-
+  Code, derived result tables, and figures for a study of cross-tissue transfer
+  regret of probe and threshold selections for gene regulatory network inference
+  from single-cell foundation models (scGPT), evaluated across kidney, lung, and
+  immune tissues and three reference networks at two cell budgets.
+keywords:
+  - single-cell foundation models
+  - gene regulatory networks
+  - scGPT
+  - mechanistic interpretability
+  - transfer regret
+  - benchmarking

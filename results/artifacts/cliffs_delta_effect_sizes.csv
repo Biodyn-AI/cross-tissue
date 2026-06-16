@@ -1,0 +1,4 @@
+comparison,cliffs_delta,magnitude
+30_cell_vs_100_cell_relative_regret,0.7777777777777778,large
+coexpression_vs_attribution_aupr_30cell,0.3611111111111111,medium
+kidney_vs_other_source_regret_100cell,0.5,large

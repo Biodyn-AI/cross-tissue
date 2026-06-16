@@ -1,0 +1,6 @@
+# Python >= 3.9. Versions below are those used to produce the committed results.
+numpy>=1.26,<2.0
+pandas>=2.0
+matplotlib>=3.8
+seaborn>=0.13
+h5py>=3.10          # only needed for src/analyze_confound_uncertainty.py (raw .h5ad)

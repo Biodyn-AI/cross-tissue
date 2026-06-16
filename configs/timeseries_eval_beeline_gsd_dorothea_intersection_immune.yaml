@@ -1,0 +1,21 @@
+project:
+  name: network-inference-timeseries-beeline-gsd-dorothea-intersection-immune
+  seed: 42
+
+paths:
+  processed_h5ad: ../../single_cell_mechinterp/outputs/tabula_sapiens_immune_subset_hpn_processed.h5ad
+  network_edges: ../outputs/inferred_edges_omnipath_dorothea_intersection_immune_hpn.tsv
+  hgnc_alias_tsv: ../../single_cell_mechinterp/external/hgnc_complete_set.txt
+
+timeseries:
+  edges_tsv: ../data/beeline_gsd_refnetwork.tsv
+  source_col: source
+  target_col: target
+  output_path: ../outputs/timeseries_eval_beeline_gsd_dorothea_intersection_immune.json
+  mapping:
+    symbol_map_tsv: ../data/beeline_gsd_symbol_map.tsv
+    hgnc_extra_alias_cols:
+      - entrez_id
+      - ensembl_id
+      - uniprot_ids
+    drop_unmapped: true

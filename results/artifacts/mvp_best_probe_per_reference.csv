@@ -1,0 +1,10 @@
+tissue,reference,best_probe,aupr_mean
+immune,dorothea,grad_input,0.0921
+immune,dorothea_chipseq,attention,0.0066
+immune,trrust,coexpression,0.0048
+kidney,dorothea,coexpression_signed,0.0637
+kidney,dorothea_chipseq,coexpression_signed,0.0397
+kidney,trrust,coexpression_signed,0.0022
+lung,dorothea,coexpression,0.0689
+lung,dorothea_chipseq,coexpression,0.0337
+lung,trrust,coexpression,0.0036

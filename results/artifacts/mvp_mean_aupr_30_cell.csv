@@ -1,0 +1,4 @@
+tissue,attention,coexpression,coexpression_signed,consensus,grad_input,integrated_gradients,perturbation
+immune,0.0152,0.0165,0.0127,0.0159,0.0333,0.0106,0.0128
+kidney,0.0277,0.0335,0.0352,0.0277,0.018,0.0246,0.0223
+lung,0.0314,0.0354,0.0252,0.0308,0.0238,0.0163,0.0284

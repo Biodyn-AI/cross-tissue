@@ -1,0 +1,7 @@
+cell_budget,source_tissue,source_best_probe,source_best_score,target_tissue,target_best_probe,target_best_score,transferred_score,absolute_regret,relative_regret
+100,immune,coexpression,0.0085,kidney,coexpression_signed,0.0395,0.0366,0.0029,0.07341772151898733
+100,immune,coexpression,0.0085,lung,coexpression,0.0361,0.0361,0.0,0.0
+100,kidney,coexpression_signed,0.0395,immune,coexpression,0.0085,0.008,0.0005000000000000004,0.058823529411764754
+100,kidney,coexpression_signed,0.0395,lung,coexpression,0.0361,0.0269,0.0092,0.2548476454293629
+100,lung,coexpression,0.0361,immune,coexpression,0.0085,0.0085,0.0,0.0
+100,lung,coexpression,0.0361,kidney,coexpression_signed,0.0395,0.0366,0.0029,0.07341772151898733

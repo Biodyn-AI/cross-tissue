@@ -1,0 +1,4 @@
+reference,num_tissues,num_unique_best_probes,modal_best_probe,modal_probe_fraction,best_aupr_range
+dorothea,3,3,grad_input,0.3333333333333333,0.028399999999999995
+dorothea_chipseq,3,3,attention,0.3333333333333333,0.0331
+trrust,3,2,coexpression,0.6666666666666666,0.0025999999999999994

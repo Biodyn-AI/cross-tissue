@@ -1,0 +1,2 @@
+n_paired_sweeps,n_positive_improvement,mean_improvement_p95_vs_p90,median_improvement_p95_vs_p90,one_sided_sign_test_p_value
+14,10,0.00024070082510002609,0.00016341470608912913,0.08978271484375

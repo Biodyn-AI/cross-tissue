@@ -1,0 +1,13 @@
+cell_budget,source_tissue,target_tissue,source_best_probe,source_best_minus_random
+100,immune,kidney,coexpression,0.006785714285714287
+100,immune,lung,coexpression,0.009014285714285714
+100,kidney,immune,coexpression_signed,0.0041
+100,kidney,lung,coexpression_signed,-0.00018571428571428558
+100,lung,immune,coexpression,0.004600000000000001
+100,lung,kidney,coexpression,0.006785714285714287
+30,immune,kidney,grad_input,-0.009000000000000001
+30,immune,lung,grad_input,-0.0035285714285714295
+30,kidney,immune,coexpression_signed,-0.004014285714285713
+30,kidney,lung,coexpression_signed,-0.002128571428571431
+30,lung,immune,coexpression,-0.000214285714285712
+30,lung,kidney,coexpression,0.006500000000000002
