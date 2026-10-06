@@ -8,7 +8,7 @@ The original two-budget phase-transition claim is not supported by the rebuilt, 
 
 ## Rebuild package
 
-The proposed release `plos-one-rebuild-v2.0.0` contains the verified analysis code, seven statistical data archives, exact frozen expression arrays and candidate-score matrices. The release notes and asset checksums identify the files and validated reproduction scope. This local candidate has not yet been published.
+The versioned release [`plos-one-rebuild-v2.0.0`](https://github.com/Biodyn-AI/cross-tissue/releases/tag/plos-one-rebuild-v2.0.0) contains the verified analysis code, seven statistical data archives, exact frozen expression arrays and candidate-score matrices. The release notes and asset checksums identify the files and validated reproduction scope. `PUBLIC_ASSET_MANIFEST.json` and `PUBLIC_SHA256SUMS.txt` identify the release assets.
 
 - `S1_Code.zip`: scripts, configurations, tests, pinned table dependencies, model-rerun instructions and the exact scGPT implementation with its original licence.
 - `S1_Data.zip` through `S7_Data_Geneformer_Null_Draws.zip`: per-chain measurements, individual null draws, diagnostic observations, figure source points, feature/input identities and provenance. See the supporting package's combined manifest for the actual filenames and mapping.
@@ -23,4 +23,4 @@ The existing `src/`, `data/`, `results/`, `paper/` and Makefile belong to the ea
 
 ## Terms and citation
 
-Cite the evaluated models, Tabula Sapiens and the original regulatory resources alongside this benchmark. The root MIT licence applies to author code, not all third-party data or components. `COMPONENT_LICENCES.json` and `DATA_ATTRIBUTION.md` in S1 Code describe the exact source and resource terms. No manuscript submission, peer-review correspondence or related unpublished manuscript copy is included in the proposed data/code release.
+Cite the evaluated models, Tabula Sapiens and the original regulatory resources alongside this benchmark. The root MIT licence applies to author code, not all third-party data or components. `COMPONENT_LICENCES.json` and `DATA_ATTRIBUTION.md` in S1 Code describe the exact source and resource terms. No manuscript submission, peer-review correspondence or related unpublished manuscript copy is included in the data/code release.

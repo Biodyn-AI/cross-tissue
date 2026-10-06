@@ -1,6 +1,6 @@
 Cross-tissue benchmark rebuild: plos-one-rebuild-v2.0.0
 
-Prepared local release candidate; publication is not asserted by this file.
+Versioned data and code release; exact assets and validation scope follow.
 
 This version evaluates scGPT whole-human and Geneformer V2-104M on kidney,
 lung and pooled immune Tabula Sapiens contexts. The complete design contains
@@ -38,15 +38,14 @@ provider metadata. Author code licensing does not replace third-party terms.
 
 Earlier exploratory files are retained for provenance and are superseded for
 the rebuilt benchmark. The root README explains which workflow to use.
-No journal correspondence or related-manuscript copy is part of this proposed
+No journal correspondence or related-manuscript copy is part of this
 data/code release.
 
 Completed verification (6 October 2026)
 
-The exact 10 proposed ZIP assets are bound by ASSET_MANIFEST.json and
-SHA256SUMS.txt in the companion release-asset inventory. Their names remain
-unchanged, including LOCAL_ prefixes for the two large array assets. Those
-prefixes identify prepared filenames, not an existing deposit.
+The exact 10 ZIP assets are bound by PUBLIC_ASSET_MANIFEST.json and
+PUBLIC_SHA256SUMS.txt. Their names retain LOCAL_ prefixes for the two large
+array assets as stable filenames; access is through the versioned release.
 
 All 57 jobs / 312 budget snapshots completed. Fresh extracted Code/Data
 processing reproduced 24 numerical tables, all 3,723 numeric registry values
@@ -76,5 +75,7 @@ statistics retain their provider terms. Author helper modules without a
 standalone licence are identified explicitly in COMPONENT_LICENCES.json;
 the revision-code licence does not blanket-relicense all archive components.
 
-This preparation makes no push, tag, release creation or upload. Author review
-of the concrete release assets precedes any public publication action.
+Release page: https://github.com/Biodyn-AI/cross-tissue/releases/tag/plos-one-rebuild-v2.0.0
+
+Local extraction and authenticated upload checks are distinct from independent
+public-download SHA256 verification; the latter is recorded separately.
