@@ -1,0 +1,80 @@
+Cross-tissue benchmark rebuild: plos-one-rebuild-v2.0.0
+
+Prepared local release candidate; publication is not asserted by this file.
+
+This version evaluates scGPT whole-human and Geneformer V2-104M on kidney,
+lung and pooled immune Tabula Sapiens contexts. The complete design contains
+57 model jobs and 312 saved budget snapshots, including continuous scGPT and
+immune-organ sensitivity arms. Primary budgets are 30, 50, 100, 200, 500 and
+1,000 cells. Resampling uncertainty is conditional on the fixed atlas pools,
+references, preprocessing, checkpoints and seven-probe menu.
+
+The replicated paired comparisons do not support the earlier sharp decrease
+in transfer regret between 30 and 100 cells. Native context-specific candidate
+universes retain high-budget transfer loss; strict common-candidate results
+change that loss and its uncertainty. These are operational selection and
+calibration findings, not an isolated causal effect of tissue or architecture.
+
+The release assets comprise S1 Code, S1--S7 Data, exact frozen sparse model
+inputs and saved candidate-score matrices. The supporting archives preserve
+per-chain measurements, every scalar degree-null draw, individual diagnostic
+observations, figure source points, identities and execution provenance.
+The asset inventory and SHA256 file identify the exact supplied bytes.
+
+Reproduction scope is explicit. Fresh extraction reruns the statistical
+processing and figure/numerical-registry generation using supplied model and
+diagnostic measurements. Input restoration verifies ordered observation and
+feature identities and sparse-array component hashes for all three contexts.
+Those checks do not rerun all pretrained models. Four independent legacy
+first-30-cell snapshot replays match all 158 compared artifact entries exactly;
+later inherited accumulators were not independently replayed. Restored H5AD
+serialization need not have the original file-byte hash.
+
+Full model execution additionally requires matching separately acquired model
+checkpoints, dictionaries, regulatory references and the documented production
+runtime. Exact scGPT execution source and its original MIT notice are supplied.
+Tabula Sapiens/CELLxGENE expression arrays retain CC BY 4.0 attribution and
+provider metadata. Author code licensing does not replace third-party terms.
+
+Earlier exploratory files are retained for provenance and are superseded for
+the rebuilt benchmark. The root README explains which workflow to use.
+No journal correspondence or related-manuscript copy is part of this proposed
+data/code release.
+
+Completed verification (6 October 2026)
+
+The exact 10 proposed ZIP assets are bound by ASSET_MANIFEST.json and
+SHA256SUMS.txt in the companion release-asset inventory. Their names remain
+unchanged, including LOCAL_ prefixes for the two large array assets. Those
+prefixes identify prepared filenames, not an existing deposit.
+
+All 57 jobs / 312 budget snapshots completed. Fresh extracted Code/Data
+processing reproduced 24 numerical tables, all 3,723 numeric registry values
+and formatted macros, and all 12 PNG files byte-for-byte in the pinned
+environment. New full kidney/lung/immune H5AD restorations preserved every
+ordered cell/retained/raw feature identity and all 27 sparse component hashes.
+No live inputs or manifests changed. No model rerun is claimed by this check.
+
+All 8 supporting-information ZIPs are below 20,000,000 bytes. The candidate
+score asset is 1,240,317,492 bytes and the exact input asset is 913,854,512 bytes.
+The final package validation/report supply their SHA256 hashes and scope.
+
+An explicit archive-member inventory found no scientific manuscript,
+submission PDF/Word file, author letter or peer-review correspondence in
+these 10 assets. The only TeX payload is generated numeric macro definitions;
+validation scripts/tests and descriptive manifests are supplied code/data.
+The existing upstream paper/ directory remains historical repository content
+and is not part of the new release assets or scoped documentation commit.
+
+Public provider links and exact identities alone were not validated as a
+complete download-to-frozen-input recipe. The original panel/subset command
+and provider's first normalization remain unrecovered; lung source-X was
+unavailable. Full model execution needs the supplied exact arrays plus
+matching separately acquired third-party checkpoints/dictionaries/references.
+Original provider edge files are not redistributed. Derived reference
+statistics retain their provider terms. Author helper modules without a
+standalone licence are identified explicitly in COMPONENT_LICENCES.json;
+the revision-code licence does not blanket-relicense all archive components.
+
+This preparation makes no push, tag, release creation or upload. Author review
+of the concrete release assets precedes any public publication action.

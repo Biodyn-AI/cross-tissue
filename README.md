@@ -1,117 +1,26 @@
-# Cross-Tissue Probe Threshold Transfer for Mechanistic GRN Evaluation in Single-Cell Foundation Models
+# Cross-tissue transfer of probes and thresholds for gene regulatory network evaluation with scGPT and Geneformer
 
-This repository contains the code, derived result tables, figures, and
-configuration files accompanying the paper:
+Author: Ihor Kendiukhov, University of Tübingen.
 
-> **Cross-Tissue Probe Threshold Transfer for Mechanistic Gene Regulatory
-> Network Evaluation in Single-Cell Foundation Models.**
-> Ihor Kendiukhov, University of Tübingen.
+The rebuilt benchmark evaluates scGPT whole-human and Geneformer V2-104M on fixed kidney, lung and pooled immune contexts from Tabula Sapiens. It compares two model-free expression statistics and five model-derived probes across nested budgets of 30, 50, 100, 200, 500 and 1,000 cells, with independent cell-resampling chains conditional on the stored atlas pools. The complete design comprises 57 model jobs and 312 budget snapshots; it also includes corrected continuous scGPT encoding and immune-organ strata.
 
-The study asks a question that within-tissue benchmark leaderboards do not
-answer: **do the probe and threshold choices that work best for gene
-regulatory network (GRN) inference in one tissue transfer to a held-out
-tissue?** We quantify the **cross-tissue transfer regret** of probe selections
-derived from scGPT embeddings across three tissues (kidney, lung, immune),
-three reference networks (TRRUST, DoRothEA, DoRothEA ChIP-seq), seven probe
-families, and two cell budgets (30 and 100 cells).
+The original two-budget phase-transition claim is not supported by the rebuilt, replicated analysis. Native context-specific candidate universes exhibit transfer losses, but the strict common-candidate comparison changes the loss and its uncertainty. The benchmark therefore measures operational selection and calibration under a specified evaluation design; it does not isolate a causal tissue effect or model architecture.
 
-## Key findings
+## Rebuild package
 
-- **Transfer regret has a sharp cell-budget phase transition.** Mean relative
-  regret falls 4.9-fold from 0.379 (95% bootstrap CI 0.221–0.521) at 30 cells
-  to 0.077 (CI 0.022–0.152) at 100 cells (Cliff's δ = 0.778; exact permutation
-  Δ = 0.303, p = 0.011, BH q = 0.027).
-- **Optimization only helps when data is sufficient.** Source-best probe
-  selection slightly *underperforms* random selection at 30 cells but massively
-  outperforms it at 100 cells.
-- **Variance structure flips with budget.** The tissue×probe interaction
-  dominates variance at 30 cells (43.6%); tissue identity dominates at 100
-  cells (81.8%).
-- **Coexpression probes generalize best**, winning 7/9 tissue–reference
-  contests vs. 2/9 for attribution-based probes.
-- **Multiple-testing discipline:** of 5 preregistered hypotheses, only 2
-  survive Benjamini–Hochberg correction at FDR = 0.1.
+The proposed release `plos-one-rebuild-v2.0.0` contains the verified analysis code, seven statistical data archives, exact frozen expression arrays and candidate-score matrices. The release notes and asset checksums identify the files and validated reproduction scope. This local candidate has not yet been published.
 
-## Repository layout
+- `S1_Code.zip`: scripts, configurations, tests, pinned table dependencies, model-rerun instructions and the exact scGPT implementation with its original licence.
+- `S1_Data.zip` through `S7_Data_Geneformer_Null_Draws.zip`: per-chain measurements, individual null draws, diagnostic observations, figure source points, feature/input identities and provenance. See the supporting package's combined manifest for the actual filenames and mapping.
+- `LOCAL_Frozen_Model_Inputs.zip`: stored sparse expression, raw-count and ambient-corrected count components, with exact ordered identities and metadata. These arrays retain Tabula Sapiens/CELLxGENE CC BY 4.0 terms and attribution.
+- `LOCAL_Candidate_Matrices.zip`: saved model-derived candidate scores and shared expression-baseline scores. The original provider network files and model weights are obtained separately under their provider terms.
 
-```
-cross-tissue/
-├── README.md                  # this file
-├── LICENSE                    # MIT
-├── CITATION.cff               # how to cite
-├── requirements.txt           # Python dependencies
-├── Makefile                   # one-command reproduction of artifacts + figures
-├── src/                       # analysis code
-│   ├── analyze_transfer_artifacts.py     # sweep outputs + MVP tables -> result CSVs
-│   ├── analyze_confound_uncertainty.py   # donor/composition sensitivity + bootstrap CIs
-│   ├── analyze_iterator_stress_tests.py  # permutation, leave-one-out, policy-uplift CIs
-│   └── make_paper_figures.py             # regenerates Fig 1–11 from result CSVs
-├── configs/                   # YAML configs for the upstream probe/threshold sweeps
-├── data/
-│   ├── README.md              # dataset access + provenance (see below)
-│   ├── mvp_report/            # workshop MVP benchmark tables (analysis input)
-│   ├── sweep_outputs/         # committed probe/threshold sweep results (JSON/CSV)
-│   └── raw/                   # (not committed) large .h5ad single-cell matrices
-├── results/
-│   ├── artifacts/             # derived result tables cited in the paper
-│   └── figures/               # fig01–fig11 (PNG, 300 DPI)
-└── paper/
-    ├── cross_tissue_transfer_plos_one.pdf
-    └── supporting_information.pdf
-```
+Extract S1 Code and all seven small data archives into the same directory. Follow the supplied README for the tested table/figure/registry reproduction. That check processes the supplied model and diagnostic measurements; it does not rerun pretrained models. Full model execution additionally requires the frozen inputs, separately acquired matching checkpoints/reference resources and the production runtime documented in `MODEL_RERUN.md`. Restored H5AD serialization is not claimed to match the original file-byte hash.
 
-## Reproducing the results
+## Earlier files
 
-### 1. Environment
+The existing `src/`, `data/`, `results/`, `paper/` and Makefile belong to the earlier two-budget exploratory package. They are retained for historical provenance and are superseded for the rebuilt study. Their `make all` target reproduces those earlier derived tables, not the 57-job benchmark. The original root README is retained as `LEGACY_ROOT_README.md`; its phase-transition and preregistration statements are not current findings.
 
-```bash
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-```
+## Terms and citation
 
-### 2. Derived tables and figures (no large downloads needed)
-
-The committed sweep outputs in `data/sweep_outputs/` and the MVP tables in
-`data/mvp_report/` are sufficient to regenerate every result table and figure:
-
-```bash
-make artifacts   # re-derive result CSVs into results/artifacts/
-make figures     # regenerate results/figures/fig01–fig11.png
-make all         # both
-```
-
-or directly:
-
-```bash
-python src/analyze_transfer_artifacts.py
-python src/analyze_iterator_stress_tests.py
-python src/make_paper_figures.py
-```
-
-All scripts default to repository-relative paths; run them from the repo root.
-Random-seeded steps (bootstrap, permutation) use `--seed 42` by default.
-Tested with Python 3.9–3.11.
-
-### 3. Confound / donor-composition sensitivity (optional, needs raw data)
-
-`src/analyze_confound_uncertainty.py` additionally reads the raw Tabula Sapiens
-`.h5ad` matrices to assess donor/sample-composition confounds. These files are
-large and are **not** committed; see [`data/README.md`](data/README.md) for
-download instructions, then place them under `data/raw/` (or pass
-`--kidney-h5ad/--lung-h5ad/--immune-h5ad`).
-
-## Data and provenance
-
-All underlying data are public. See [`data/README.md`](data/README.md) for full
-provenance and access instructions for Tabula Sapiens, TRRUST, DoRothEA,
-SCENIC, and the BEELINE/HPN-DREAM evaluation scaffolds. scGPT model weights are
-from the official scGPT release.
-
-## Citation
-
-If you use this code or data, please cite the paper (see `CITATION.cff`).
-
-## License
-
-Code is released under the MIT License (`LICENSE`). Third-party datasets retain
-their original licenses as described in `data/README.md`.
+Cite the evaluated models, Tabula Sapiens and the original regulatory resources alongside this benchmark. The root MIT licence applies to author code, not all third-party data or components. `COMPONENT_LICENCES.json` and `DATA_ATTRIBUTION.md` in S1 Code describe the exact source and resource terms. No manuscript submission, peer-review correspondence or related unpublished manuscript copy is included in the proposed data/code release.
